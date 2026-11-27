@@ -1,4 +1,5 @@
 import { ArrowUpRight, MapPin } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { playerData } from '../data/sampleData'
 
 export default function TalentDiscovery() {
@@ -7,7 +8,7 @@ export default function TalentDiscovery() {
       <div className="container">
         <div className="section-heading">
           <div><span className="kicker">TALENT DISCOVERY</span><h2>Next-generation talent,<br />ready to be seen.</h2></div>
-          <a className="text-link" href="/discover">Explore all players <ArrowUpRight size={17} /></a>
+          <Link className="text-link" to="/discover">Explore all players <ArrowUpRight size={17} /></Link>
         </div>
         <div className="player-grid">
           {playerData.map((player) => (
@@ -21,7 +22,7 @@ export default function TalentDiscovery() {
                 <h3>{player.name}</h3>
                 <div className="player-meta"><span>{player.age} yrs</span><span><MapPin size={13} /> {player.country}</span></div>
                 <p>{player.club}</p>
-                <button className="profile-button" onClick={() => window.location.assign('/discover')}>View Profile <ArrowUpRight size={16} /></button>
+                <Link className="profile-button" to="/discover">View Profile <ArrowUpRight size={16} /></Link>
               </div>
             </article>
           ))}

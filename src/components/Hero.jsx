@@ -1,4 +1,4 @@
-import { ArrowRight, Globe2, MessageCircle, Search } from 'lucide-react'
+import { ArrowRight, Search } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export default function Hero() {
@@ -15,15 +15,13 @@ export default function Hero() {
             <Link className="button button-ghost" to="/discover"><Search size={18} /> Explore Football</Link>
           </div>
           <div className="trust-row">
-            <div className="avatar-stack">
-              <img src="https://i.pravatar.cc/80?img=12" alt="" /><img src="https://i.pravatar.cc/80?img=33" alt="" /><img src="https://i.pravatar.cc/80?img=47" alt="" />
-            </div>
-            <div><strong>16,000+</strong><span>Football people connected</span></div>
+            <span className="trust-mark"><span /></span>
+            <div><strong>One game. Every role.</strong><span>From the touchline to the stands</span></div>
           </div>
         </div>
-        <div className="hero-stats">
-          <div><Globe2 size={17} /><strong>84</strong><span>Countries</span></div>
-          <div><MessageCircle size={17} /><strong>2.4K</strong><span>Weekly connections</span></div>
+        <div className="hero-note">
+          <span className="hero-note-line" />
+          <span>THE GAME IS BETTER<br />WHEN WE CONNECT.</span>
         </div>
       </div>
     </section>

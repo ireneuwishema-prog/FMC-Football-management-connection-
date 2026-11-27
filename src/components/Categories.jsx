@@ -14,8 +14,8 @@ export default function Categories() {
           {categoryData.map((item) => {
             const Icon = Icons[item.icon]
             return (
-              <Link className="category-card" to={item.title === 'Football Players' ? '/discover' : item.title === 'Football Clubs' ? '/clubs' : '/professionals'} key={item.title}>
-                <div className="category-top"><span className="category-icon"><Icon size={21} /></span><span>{item.count}</span></div>
+              <Link className="category-card" to={item.path} key={item.title}>
+                <div className="category-top"><span className="category-icon"><Icon size={21} /></span><span>{item.audience}</span></div>
                 <h3>{item.title}</h3><p>{item.text}</p>
                 <span className="card-arrow"><Icons.ArrowUpRight size={17} /></span>
               </Link>

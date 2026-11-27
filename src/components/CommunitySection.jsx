@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 
 export default function CommunitySection() {
   return (
-    <section className="section community-section">
+    <section className="section community-section" id="community">
       <div className="container community-grid">
         <div className="community-content">
           <span className="kicker">THE FMC COMMUNITY</span>
           <h2>More than football.<br />A shared passion.</h2>
-          <p>Stay close to the game you love. Follow your favourite clubs and players, get involved in discussions and never miss a story.</p>
+          <p>Fans and professionals can follow clubs and players, join thoughtful football discussions and share the moments that bring the game to life.</p>
           <Link className="button button-dark" to="/community">Enter the community <ArrowRight size={17} /></Link>
         </div>
         <div className="community-cards">

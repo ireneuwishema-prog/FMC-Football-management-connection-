@@ -231,7 +231,7 @@ export default function CommunityPage() {
             <CommunityRightRail
               topics={communityTopics}
               activeTopic={activeTopic}
-              onSelectTopic={setActiveTopic}
+              onSelectTopic={topic => { setActiveFeed('all'); setActiveTopic(topic) }}
               followedAccountIdsState={accountFollows}
               onToggleFollow={id => toggleFollow(setAccountFollows, id)}
               followedClubIdsState={clubFollows}

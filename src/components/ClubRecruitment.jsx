@@ -1,6 +1,6 @@
 import { ArrowUpRight, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { clubData } from '../data/sampleData'
+import clubProfiles from '../data/clubProfiles'
 
 export default function ClubRecruitment() {
   return (
@@ -11,11 +11,11 @@ export default function ClubRecruitment() {
           <Link className="text-link" to="/clubs">Explore all clubs <ArrowUpRight size={17} /></Link>
         </div>
         <div className="club-grid">
-          {clubData.map((club) => (
-            <article className="club-card" key={club.name}>
+          {clubProfiles.slice(0, 4).map(club => (
+            <article className="club-card" key={club.id}>
               <div className="club-logo" style={{ '--club-color': club.color }}><span>{club.initials}</span></div>
               <div className="club-info"><h3>{club.name}</h3><span><MapPin size={14} /> {club.country}</span><p>{club.league}</p></div>
-              <Link aria-label={`View ${club.name}`} to="/clubs"><ArrowUpRight size={18} /></Link>
+              <Link aria-label={`View ${club.name}`} to={`/clubs/${club.id}`}><ArrowUpRight size={18} /></Link>
             </article>
           ))}
         </div>

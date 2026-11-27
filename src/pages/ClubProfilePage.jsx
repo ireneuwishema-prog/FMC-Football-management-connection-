@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowUpRight, MapPin, UsersRound } from 'lucide-react'
 import { Link, useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import DashboardAccessAction from '../components/DashboardAccessAction'
 import ClubLogo from '../components/ClubLogo'
 import OpportunityCard from '../components/OpportunityCard'
 import clubProfiles from '../data/clubProfiles'
@@ -127,6 +128,9 @@ export default function ClubProfilePage() {
             </div>
           </section>
         )}
+        <div className="container public-profile-dashboard-action">
+          <DashboardAccessAction to="/club-dashboard" title="Visit the Club Dashboard" description="Open the sample club workspace." />
+        </div>
       </main>
       <Footer />
     </>

@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowUpRight, MapPin, Play, ShieldCheck } from 'lucide-react
 import { Link, useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import DashboardAccessAction from '../components/DashboardAccessAction'
 import playerProfiles from '../data/playerProfiles'
 
 export default function PlayerProfilePage() {
@@ -113,6 +114,9 @@ export default function PlayerProfilePage() {
               </div>
             </section>
           </aside>
+          <div className="public-profile-dashboard-action">
+            <DashboardAccessAction to="/dashboard" title="Visit the Player Dashboard" description="Open the sample player workspace." />
+          </div>
         </div>
       </main>
       <Footer />

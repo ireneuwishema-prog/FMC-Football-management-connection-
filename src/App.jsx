@@ -8,6 +8,11 @@ import ClubProfilePage from './pages/ClubProfilePage'
 import OpportunityDetailPage from './pages/OpportunityDetailPage'
 import ProfessionalsPage, { ProfessionalProfileRoute, ProfessionalsDirectoryRoute } from './pages/ProfessionalsPage'
 import CommunityPage from './pages/CommunityPage'
+import PlayerDashboardPage from './pages/PlayerDashboardPage'
+import ClubDashboardPage from './pages/ClubDashboardPage'
+import ScoutDashboardPage from './pages/ScoutDashboardPage'
+import AgentDashboardPage from './pages/AgentDashboardPage'
+import CoachDashboardPage from './pages/CoachDashboardPage'
 
 export default function App() {
   return (
@@ -25,7 +30,11 @@ export default function App() {
       <Route path="/community" element={<CommunityPage />} />
       <Route path="/login" element={<PlaceholderPage title="Login" />} />
       <Route path="/register" element={<PlaceholderPage title="Join FMC" />} />
-      <Route path="/dashboard" element={<PlaceholderPage title="User Dashboard" />} />
+      <Route path="/dashboard" element={<PlayerDashboardPage />} />
+      <Route path="/club-dashboard" element={<ClubDashboardPage />} />
+      <Route path="/scout-dashboard" element={<ScoutDashboardPage />} />
+      <Route path="/agent-dashboard" element={<AgentDashboardPage />} />
+      <Route path="/coach-dashboard" element={<CoachDashboardPage />} />
       <Route path="/privacy" element={<PlaceholderPage title="Privacy Policy" />} />
       <Route path="/terms" element={<PlaceholderPage title="Terms of Service" />} />
       <Route path="*" element={<PlaceholderPage title="Page Not Found" />} />

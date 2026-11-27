@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
@@ -16,14 +16,14 @@ export default function Navbar() {
           <span className="brand-mark"><span>F</span></span>
           <span className="brand-copy"><strong>FMC</strong><small>FOOTBALL CONNECTION</small></span>
         </Link>
-        <nav className={open ? 'nav-links open' : 'nav-links'} aria-label="Primary navigation">
-          {links.map(([label, path]) => <Link key={path} to={path} onClick={() => setOpen(false)}>{label}</Link>)}
+        <nav id="primary-navigation" className={open ? 'nav-links open' : 'nav-links'} aria-label="Primary navigation">
+          {links.map(([label, path]) => <NavLink key={path} to={path} end={path === '/'} onClick={() => setOpen(false)}>{label}</NavLink>)}
         </nav>
         <div className="nav-actions">
           <Link className="login-link" to="/login">Login</Link>
           <Link className="button button-small" to="/register">Join FMC <ArrowUpRight size={16} /></Link>
         </div>
-        <button className="menu-button" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        <button className="menu-button" type="button" onClick={() => setOpen(value => !value)} aria-label="Toggle navigation menu" aria-expanded={open} aria-controls="primary-navigation">
           {open ? <X /> : <Menu />}
         </button>
       </div>

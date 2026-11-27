@@ -9,6 +9,7 @@ import {
 import { Binoculars, Trophy, ChartNoAxesCombined } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import DashboardAccessAction from '../components/DashboardAccessAction'
 import professionals, { professionalCategories, sampleInboundRequests } from '../data/professionals'
 
 const categoryIcons = { Binoculars, Handshake, GraduationCap, Trophy, Building2, ChartNoAxesCombined }
@@ -293,6 +294,13 @@ function ProfessionalProfile() {
 
   const connected = connections.includes(person.id)
   const pending = sentRequests.includes(person.id)
+  const dashboardPath = person.role === 'Football Agent'
+    ? '/agent-dashboard'
+    : person.role === 'Football Scout'
+      ? '/scout-dashboard'
+      : person.role === 'Football Coach'
+        ? '/coach-dashboard'
+        : null
 
   return (
     <>
@@ -348,6 +356,15 @@ function ProfessionalProfile() {
           </article>
           <Link className="professional-network-return" to="/professionals#my-network">Manage your network <ArrowRight size={15} /></Link>
         </aside>
+        {dashboardPath && (
+          <div className="professional-dashboard-action">
+            <DashboardAccessAction
+              to={dashboardPath}
+              title={`Visit the ${person.role === 'Football Agent' ? 'Agent' : person.role === 'Football Scout' ? 'Scout' : 'Coach'} Dashboard`}
+              description="Open the sample workspace for this professional role."
+            />
+          </div>
+        )}
       </section>
     </>
   )

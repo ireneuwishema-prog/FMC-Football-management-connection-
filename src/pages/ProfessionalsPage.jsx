@@ -224,7 +224,8 @@ function ProfessionalsDirectory() {
   }
 
   function exploreRole(role) {
-    setFilters(current => ({ ...current, role }))
+    setSearch('')
+    setFilters({ ...initialFilters, role })
     document.getElementById('professional-directory')?.scrollIntoView({ behavior: 'smooth' })
   }
 

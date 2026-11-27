@@ -7,6 +7,7 @@ import ClubsRecruitmentPage from './pages/ClubsRecruitmentPage'
 import ClubProfilePage from './pages/ClubProfilePage'
 import OpportunityDetailPage from './pages/OpportunityDetailPage'
 import ProfessionalsPage, { ProfessionalProfileRoute, ProfessionalsDirectoryRoute } from './pages/ProfessionalsPage'
+import CommunityPage from './pages/CommunityPage'
 
 export default function App() {
   return (
@@ -21,7 +22,7 @@ export default function App() {
         <Route index element={<ProfessionalsDirectoryRoute />} />
         <Route path=":professionalId" element={<ProfessionalProfileRoute />} />
       </Route>
-      <Route path="/community" element={<PlaceholderPage title="Community" />} />
+      <Route path="/community" element={<CommunityPage />} />
       <Route path="/login" element={<PlaceholderPage title="Login" />} />
       <Route path="/register" element={<PlaceholderPage title="Join FMC" />} />
       <Route path="/dashboard" element={<PlaceholderPage title="User Dashboard" />} />

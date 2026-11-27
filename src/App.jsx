@@ -6,6 +6,7 @@ import PlayerProfilePage from './pages/PlayerProfilePage'
 import ClubsRecruitmentPage from './pages/ClubsRecruitmentPage'
 import ClubProfilePage from './pages/ClubProfilePage'
 import OpportunityDetailPage from './pages/OpportunityDetailPage'
+import ProfessionalsPage, { ProfessionalProfileRoute, ProfessionalsDirectoryRoute } from './pages/ProfessionalsPage'
 
 export default function App() {
   return (
@@ -16,7 +17,10 @@ export default function App() {
       <Route path="/clubs" element={<ClubsRecruitmentPage />} />
       <Route path="/clubs/:clubId" element={<ClubProfilePage />} />
       <Route path="/opportunities/:opportunityId" element={<OpportunityDetailPage />} />
-      <Route path="/professionals" element={<PlaceholderPage title="Professionals" />} />
+      <Route path="/professionals" element={<ProfessionalsPage />}>
+        <Route index element={<ProfessionalsDirectoryRoute />} />
+        <Route path=":professionalId" element={<ProfessionalProfileRoute />} />
+      </Route>
       <Route path="/community" element={<PlaceholderPage title="Community" />} />
       <Route path="/login" element={<PlaceholderPage title="Login" />} />
       <Route path="/register" element={<PlaceholderPage title="Join FMC" />} />
